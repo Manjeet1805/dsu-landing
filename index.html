@@ -329,6 +329,40 @@
       color: var(--text-muted);
       opacity: 0.7;
     }
+
+    /* ── SCROLL ARROW ── */
+    .scroll-arrow {
+      display: flex;
+      justify-content: center;
+      padding: 28px 0 12px;
+      
+    }
+
+    .scroll-arrow a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.6);
+      transition: all 0.3s ease;
+      animation: bounceDown 2s ease-in-out infinite;
+    }
+
+    .scroll-arrow a:hover {
+      border-color: var(--gold-500);
+      color: var(--gold-500);
+      background: rgba(212, 168, 83, 0.08);
+    }
+
+    @keyframes bounceDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
   </style>
 </head>
 <body>
@@ -368,10 +402,17 @@
             </div>
           </div>
         </div>
+        <!-- Scroll Arrow -->
+        <div class="scroll-arrow">
+          <a href="#calendly" aria-label="Scroll to booking">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+        </div>
       </section>
 
+
       <!-- Calendly Section -->
-      <section class="calendly-section">
+      <section class="calendly-section" id="calendly">
         <div class="container">
           <h2 class="section-title">Book Your <span class="title-highlight">Discovery Call</span></h2>
           <p class="section-subtitle">Pick a time that works for you. This is a free, no-obligation call.</p>
